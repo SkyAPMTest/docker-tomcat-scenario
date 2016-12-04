@@ -108,7 +108,7 @@ SKYWALKING_OPTS=""
 if [ ! -f "$SKYWALKING_AGENT_FILE" ]; then
     echo "skywalking agent file cannot be found."
 else
-    SKYWALKING_OPTS = " -DuserId=test -DapplicationCode=test -Dserver_list=${SERVER_LIST} -javaagent:$SKYWALKING_AGENT_FILE"
+    SKYWALKING_OPTS=" -DuserId=${USER_ID} -DapplicationCode=${APPLICATION_CODE} -Dservers=${SERVER_LIST} -Dagent=${SKYWALKING_AGENT_FILE} -javaagent:$SKYWALKING_AGENT_FILE"
 fi
 
 # OS specific support.  $var _must_ be set to either true or false.
@@ -377,9 +377,6 @@ elif [ "$1" = "run" ]; then
       -Dcatalina.base="\"$CATALINA_BASE\"" \
       -Dcatalina.home="\"$CATALINA_HOME\"" \
       -Djava.io.tmpdir="\"$CATALINA_TMPDIR\"" \
-            -DuserId=test \
-            -DapplicationCode=test \
-            -Dserver_list=${SERVER_LIST} \
       org.apache.catalina.startup.Bootstrap "$@" start
   fi
 

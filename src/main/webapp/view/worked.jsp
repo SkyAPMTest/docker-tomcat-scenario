@@ -5,9 +5,12 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<title>Hello World</title>
+		<title>Congratulate! :-)</title>
 	</head>
 	<body>
-	    Routing server IPs : <%=request.getAttribute("ROUTING_SERVERS") %>
+	    Agent: <%=request.getAttribute("AGENT") %><br/>
+        Application Code :<%=request.getAttribute("applicationCode") %><br/>
+        User Id : <%=request.getAttribute("userId") %><br/>
+	    Routing servers : <%=request.getAttribute("ROUTING_SERVERS") %>
 	</body>
 </html>
