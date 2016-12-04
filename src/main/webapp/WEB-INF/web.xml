@@ -11,9 +11,34 @@
         <servlet-class>com.a.eye.skywalking.docker.test.DockerEnvTestServlet</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>routingTestServlet</servlet-name>
+        <servlet-class>com.a.eye.skywalking.docker.test.RoutingTestServlet</servlet-class>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>dockerEnvTestServlet</servlet-name>
         <url-pattern>/docker-env</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>routingTestServlet</servlet-name>
+        <url-pattern>/routing/url-1</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>routingTestServlet</servlet-name>
+        <url-pattern>/routing/url-2</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>routingTestServlet</servlet-name>
+        <url-pattern>/routing/url-3</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>routingTestServlet</servlet-name>
+        <url-pattern>/routing/url-4</url-pattern>
     </servlet-mapping>
 
     <welcome-file-list>
