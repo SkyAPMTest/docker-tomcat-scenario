@@ -3,11 +3,7 @@ Tomcat scenario based on **Docker**, testing skywalking tracer for tomcat.
 
 * command that build docker images
 ```shell
-    cd $project_dir
-    mvn clean package
-    cd $project_dir/<tomcat version>
-    cp ../target/tomcat-scenario.war .
-    docker build -t tomcat-scenario:7 .
+   mvn package docker:build
 ```
 
 * Provide Tomcat and Application to instrument.

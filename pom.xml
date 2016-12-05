@@ -16,8 +16,57 @@
         </dependency>
     </dependencies>
 
+    <properties>
+        <tomcat.7.0.73.version>7.0.73</tomcat.7.0.73.version>
+        <tomcat.8.0.39.version>8.0.39</tomcat.8.0.39.version>
+    </properties>
+
     <build>
         <finalName>tomcat-scenario</finalName>
+        <plugins>
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>0.4.13</version>
+                <configuration>
+                    <imageName>skywalking/docker-tomcat-scenario</imageName>
+                    <dockerDirectory>${project.basedir}/8/8.0.39</dockerDirectory>
+                    <imageTags>
+                        <imageTag>${tomcat.8.0.39.version}</imageTag>
+                    </imageTags>
+                    <resources>
+                        <resource>
+                            <targetPath>/</targetPath>
+                            <directory>${project.build.directory}</directory>
+                            <include>${project.build.finalName}.war</include>
+                        </resource>
+                    </resources>
+                </configuration>
+                <!-- Tomcat 7.0.73 -->
+                <executions>
+                    <execution>
+                        <id>tomcat-7.0.73-build-image</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                        <configuration>
+                            <dockerDirectory>${project.basedir}/7/7.0.73</dockerDirectory>
+                            <imageName>skywalking/docker-tomcat-scenario</imageName>
+                            <imageTags>
+                                <imageTag>${tomcat.7.0.73.version}</imageTag>
+                            </imageTags>
+                            <resources>
+                                <resource>
+                                    <targetPath>/</targetPath>
+                                    <directory>${project.build.directory}</directory>
+                                    <include>${project.build.finalName}.war</include>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
     </build>
-
 </project>
