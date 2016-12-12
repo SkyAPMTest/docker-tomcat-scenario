@@ -1,9 +1,9 @@
 FROM tomcat:7.0.73
 
 # routing server ips
-ENV SERVER_LIST 127.0.0.1:34000
-ENV USER_ID test
-ENV APPLICATION_CODE test
+ENV SERVER_LIST=127.0.0.1:34000 \
+    USER_NAME=test \
+    APPLICATION_CODE=test
 # for jpda
 ENV JPDA_ADDRESS="8000"
 ENV JPDA_TRANSPORT="dt_socket"

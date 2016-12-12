@@ -108,7 +108,7 @@ SKYWALKING_OPTS=""
 if [ ! -f "$SKYWALKING_AGENT_FILE" ]; then
     echo "skywalking agent file cannot be found."
 else
-    SKYWALKING_OPTS=" -DuserId=test -DapplicationCode=test -Dservers=${SERVER_LIST} -javaagent:$SKYWALKING_AGENT_FILE"
+    SKYWALKING_OPTS=" -Dusername=${USER_NAME} -DapplicationCode=${APPLICATION_CODE} -Dservers=${SERVER_LIST}  -Dagent=${SKYWALKING_AGENT_FILE} -javaagent:$SKYWALKING_AGENT_FILE"
 fi
 
 # OS specific support.  $var _must_ be set to either true or false.

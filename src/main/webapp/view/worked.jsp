@@ -10,7 +10,7 @@
 	<body>
 	    Agent: <%=request.getAttribute("AGENT") %><br/>
         Application Code :<%=request.getAttribute("applicationCode") %><br/>
-        User Id : <%=request.getAttribute("userId") %><br/>
+        User name : <%=request.getAttribute("username") %><br/>
 	    Routing servers : <%=request.getAttribute("ROUTING_SERVERS") %>
 	</body>
 </html>
